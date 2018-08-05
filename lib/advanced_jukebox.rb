@@ -26,6 +26,7 @@ HELP
   #this method should be the same as in jukebox.rb
 
 end
+help
 
 
 
