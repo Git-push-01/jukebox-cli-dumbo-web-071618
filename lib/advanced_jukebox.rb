@@ -25,9 +25,20 @@ def list(my_songs)
   #this method is different! Collect the keys of the my_songs hash and
   #list the songs by name
 end
+list(songs)
 
 
 def play(my_songs)
+  puts "Please enter a song name or number:"
+  user_response = gets.downcase.chomp
+
+  if (1..9).to_a.include?(user_response.to_i)
+    puts "Playing #{songs[user_response.to_i - 1]}"
+    elsif songs.include?(user_response)
+    puts "Playing #{user_response}"
+  else
+    puts "Invalid input, please try again"
+  end
   #this method is slightly different!
   #you should still ask the user for input and collect their song choice
   #this time, only allow user's to input a song name
@@ -37,6 +48,7 @@ def play(my_songs)
   #get the file path of the song by looking it up in the my_songs hash
 
 end
+play(songs)
 
 def exit_jukebox
   #this method is the same as in jukebox.rb
