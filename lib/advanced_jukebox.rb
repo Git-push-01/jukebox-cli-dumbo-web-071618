@@ -35,21 +35,19 @@ def list(my_songs)
     puts "#{i}. #{song}"
     i += 1
   end
-end	
+end
 
 
 
 def play(my_songs)
-  puts "Please enter a song name or number:"
-  user_response = gets.downcase.chomp
-
-  if (1..9).to_a.include?(user_response.to_i)
-    puts "Playing #{songs[user_response.to_i - 1]}"
-    elsif songs.include?(user_response)
-    puts "Playing #{user_response}"
-  else
-    puts "Invalid input, please try again"
-  end
+  puts "Please enter a song name:"
+    input = gets.chomp
+    my_songs.each_key do |song|
+      if input == song.downcase
+        system "open " + my_songs[song]
+        break
+      end
+     end
   #this method is slightly different!
   #you should still ask the user for input and collect their song choice
   #this time, only allow user's to input a song name
@@ -59,7 +57,7 @@ def play(my_songs)
   #get the file path of the song by looking it up in the my_songs hash
 
 end
-play(songs)
+
 
 def exit_jukebox
   puts "Goodbye"
