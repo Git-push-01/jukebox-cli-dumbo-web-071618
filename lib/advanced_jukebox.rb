@@ -13,10 +13,7 @@
 # }
 
 def help
-  am
-HELP
 
-  puts help
   #this method should be the same as in jukebox.rb
 
 end
