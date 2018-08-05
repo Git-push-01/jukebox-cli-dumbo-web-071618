@@ -13,31 +13,30 @@
  }
 
 def help
-  help = <<-HELP
-I accept the following commands:
-- help : displays this help message
-- list : displays a list of songs you can play
-- play : lets you choose a song to play
-- exit : exits this program
-HELP
+  puts "I accept the following commands:"
+  puts "- help : displays this help message"
+  puts "- list : lets you choose a song to play"
+  puts "- play : lets you choose a song to play"
+  puts "- exit : exits this program"
 
-  puts help
+
+
 
   #this method should be the same as in jukebox.rb
 
 end
-help
 
 
 
 
 def list(my_songs)
-  songs.each_with_index { |item, index|
-    puts "#{index+1}. #{item}" }
-  #this method is different! Collect the keys of the my_songs hash and
-  #list the songs by name
-end
-list(songs)
+  i = 1
+   my_songs.each_key do |song|
+    puts "#{i}. #{song}"
+    i += 1
+  end
+end	
+
 
 
 def play(my_songs)
