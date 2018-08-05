@@ -51,6 +51,7 @@ end
 play(songs)
 
 def exit_jukebox
+  puts "Goodbye"
   #this method is the same as in jukebox.rb
 end
 
